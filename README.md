@@ -60,3 +60,34 @@ The Following is a graph with all the features from the survey as well a descrip
 | seasonal_vaccine | Whether respondent received seasonal flu vaccine |
 
 For this model, we will be focusing the **season flu vaccine** label from the dataset.
+
+## Business Understanding 
+Vaccines are a useful way to prevent viral infections. One of the most common viral infections is influenza or most commonly known as the flu. The CDC recommended individuals to recieve the vaccine during the flu season of every year. However, since vaccines aren't manditory, individuals may deny them through personal beliefs or limited knowledge of the vaccine. Vaccines would be wasted where they could be used in other medical centers. <br> 
+
+**For example, 1.1 billion Covid Vaccines were estimated to be wasted due to expired vaccines and supply chain issues.** <br>
+
+In order to give patients the the vaccines as efficently as possible, hospitals and medical center store vaccines to be administer quickly whenever requested. With the current dataset, we could potentially predict whether a patient would want a vaccine based on their answers on the survey. This way, medical center can order an adiquite amount of vaccines with minimual waste. 
+
+## Data Understanding
+The dataset consist of binary and numerical entries based on their answers on a survey. There are 8 columns that have 5% of the data missing that were determined to be the cutoff to be removed. The remaining data will be filled with the approprate measurements. In order to model the dataset, all of the data type needs to be a numeric so dummy variables are needed for 12 of the columns. 
+
+## Method 
+We need to perfrom multiple claffication models to help predict the targeted variable, seasonal vaccines. 
+There will be 3 models: 
+1. Decision Tree <br>
+Default parameters are used to be used as a baseline to look for what needs to be perfomed.
+2. Random Forest <br>
+Majority of the parameters are default but some were changed to improve from the previous model 
+3. Random Forest with tuned hyperparameters <br>
+By using GridSearch, a dictionary of list of parameters are scoped to see which parameters would lead to the best results. 
+
+We will be looking at the accuracy to see how accurate the model perform on the training dataset and the testing dataset. 
+
+There were missing values and I was uncertain which method would be best. <br>
+1. The first attempt removed **columns** with more than 5% missing values.
+2. The second attempt was to remove the **indexs** or particiants that have missing values. <br>
+3. The final attempt created weight probability for each columns and **randomly** give each missing value for each columns. <br>
+
+## Results 
+
+
