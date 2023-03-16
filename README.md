@@ -72,8 +72,10 @@ In order to give patients the the vaccines as efficently as possible, hospitals 
 The dataset consist of binary and numerical entries based on their answers on a survey. There are 8 columns that have 5% of the data missing that were determined to be the cutoff to be removed. The remaining data will be filled with the approprate measurements. In order to model the dataset, all of the data type needs to be a numeric so dummy variables are needed for 12 of the columns. 
 
 ## Method 
-We need to perfrom multiple claffication models to help predict the targeted variable, seasonal vaccines. 
-There will be 3 models: 
+
+We will be using a maching learning algortithm to help us predict whether a patient will take the vaccine. Unlike the simple data analysis, machine learning is used on complex dataset where we have several, in this case, over 100 different features to help predict the target variable. I used decision tree and random forest machine learning algothrim.
+We need to perfrom multiple classification models to help predict the targeted variable, seasonal vaccines. 
+There are 3 models created: 
 1. Decision Tree <br>
 Default parameters are used to be used as a baseline to look for what needs to be perfomed.
 2. Random Forest <br>
@@ -91,3 +93,16 @@ There were missing values and I was uncertain which method would be best. <br>
 ## Results 
 
 
+
+## Limitations
+Unfortunatually, there are a large combination of parameters that the classifier can use to make the best model and it is too computational complex to look through and compare which has the best performance. That is why only a list of parameters were given to save time and narrow down the best combination. There could be a instance where a specific model perform better with the training set but not the testing set or vice versa. If given time, there could be best performing model for a given state but would be unrealistic to obtain for a predict. 
+1. Majority of the question are targeted toward the H1N1 vaccines which doesn't reflect to well if they were to take the seasonal vaccine. 
+Since it is given seasonal, a patient may be more likely to opt out of taking it for a year. This is quite different to H1N1 vaccines which last longer and tend to be more dangerous than the seasonal flu. 
+
+## Recommendations
+1. Given time, I would recommend exploring different classification models and different combinations of parameters to improve the model. <br>
+Ideally, a 80% would be prefer but not as needed since a medical center should have range of vaccines supply to take in account situations such as new patients. 
+2. Modified or targeted questions should be added to the survey. <br>
+The survey was made asking primarily about the H1N1 virus and could be change to adapt with the current state of the world such as covid-19.
+3. Determine an adiquite amount of spare vaccines to allocate to one center to another. <br>
+Not all medical centers will have the same results and should be treated regional to maximize the accuracy of the model. 
