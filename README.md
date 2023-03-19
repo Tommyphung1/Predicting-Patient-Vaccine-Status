@@ -66,15 +66,17 @@ Vaccines are a useful way to prevent viral infections. One of the most common vi
 
 **For example, 1.1 billion Covid Vaccines were estimated to be wasted due to expired vaccines and supply chain issues.** <br>
 
-In order to give patients the the vaccines as efficently as possible, hospitals and medical center store vaccines to be administer quickly whenever requested. With the current dataset, we could potentially predict whether a patient would want a vaccine based on their answers on the survey. This way, medical center can order an adiquite amount of vaccines with minimual waste. 
+In order to give patients the the vaccines as efficently as possible, hospitals and medical center store vaccines to be administer quickly whenever requested. With the current dataset, we could potentially predict whether a patient would want a vaccine based on their answers on the survey. This way, medical center can order an adiquite amount of vaccines with minimual waste. Medical center can now request an adiqute amount of vaccines along with a reasonable amount of backups as needed. 
 
 ## Data Understanding
-The dataset consist of binary and numerical entries based on their answers on a survey. There are 8 columns that have 5% of the data missing that were determined to be the cutoff to be removed. The remaining data will be filled with the approprate measurements. In order to model the dataset, all of the data type needs to be a numeric so dummy variables are needed for 12 of the columns. 
+The dataset consist of binary and numerical entries based on their answers on a survey. In order to model the dataset, all of the data type needs to be a numeric so dummy variables are needed for 12 of the columns. After the dummy variables were made, there are over 100 different columns created and will be used in the modeling. 
 
 ## Method 
+Preprocessing steps are filling missing datas, dummy variables being created and scaled with a scaler. I used weight random choice to fill the missing values to ultiizse as much of the dataset as possible. Dummy variables are used as well to deal with the categorical data and MinMax scaler was used to scaler the data from 0 to 1. 
 
 We will be using a maching learning algortithm to help us predict whether a patient will take the vaccine. Unlike the simple data analysis, machine learning is used on complex dataset where we have several, in this case, over 100 different features to help predict the target variable. I used decision tree and random forest machine learning algothrim.
 We need to perfrom multiple classification models to help predict the targeted variable, seasonal vaccines. 
+
 There are 3 models created: 
 1. Decision Tree <br>
 Default parameters are used to be used as a baseline to look for what needs to be perfomed.
@@ -83,21 +85,24 @@ Majority of the parameters are default but some were changed to improve from the
 3. Random Forest with tuned hyperparameters <br>
 By using GridSearch, a dictionary of list of parameters are scoped to see which parameters would lead to the best results. 
 
-We will be looking at the accuracy to see how accurate the model perform on the training dataset and the testing dataset. 
+We will be looking at the accuracy to see how accurate the model perform on the training dataset and the testing dataset. Another measurement to keep in mind was the recall score. 
 
-There were missing values and I was uncertain which method would be best. <br>
-1. The first attempt removed **columns** with more than 5% missing values.
-2. The second attempt was to remove the **indexs** or particiants that have missing values. <br>
-3. The final attempt created weight probability for each columns and **randomly** give each missing value for each columns. <br>
 
 ## Results 
-
+| Model | Training Accuracy | Testing Accuracy |                                                                                       
+|:------|:-------------:|:------------:|
+| Decison Tree | 100% | 68% |
+| Random Forest| 83.45| 77.20% |
+| Random Forest with Tuning| 92.59% | 79.34%|
 
 
 ## Limitations
 Unfortunatually, there are a large combination of parameters that the classifier can use to make the best model and it is too computational complex to look through and compare which has the best performance. That is why only a list of parameters were given to save time and narrow down the best combination. There could be a instance where a specific model perform better with the training set but not the testing set or vice versa. If given time, there could be best performing model for a given state but would be unrealistic to obtain for a predict. 
 1. Majority of the question are targeted toward the H1N1 vaccines which doesn't reflect to well if they were to take the seasonal vaccine. 
 Since it is given seasonal, a patient may be more likely to opt out of taking it for a year. This is quite different to H1N1 vaccines which last longer and tend to be more dangerous than the seasonal flu. 
+2. New generation and events may effect people willingness to take the vaccines. 
+Covid-19 have had an impact in people percetion of vaccines, either good or bad. Along with other factors such as religion, people opioions will change which can make the model ineffective if not updated for the new population. 
+
 
 ## Recommendations
 1. Given time, I would recommend exploring different classification models and different combinations of parameters to improve the model. <br>
