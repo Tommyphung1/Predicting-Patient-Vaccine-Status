@@ -85,11 +85,11 @@ We will be using a machine learning algorithm to help us predict whether a patie
 We need to perform multiple classification models to help predict the targeted variable, seasonal vaccines. 
 
 There are 3 models created: 
-1. Decision Tree <br>
+1. **Decision Tree** <br>
 Default parameters are used to be used as a baseline to look for what needs to be performed.
-2. Random Forest <br>
+2. **Random Forest** <br>
 The majority of the parameters are default but some were changed to improve from the previous model 
-3. Random Forest with tuned hyperparameters <br>
+3. **Random Forest with tuned hyperparameters** <br>
 By using GridSearch, a dictionary of a list of parameters is scoped to see which parameters would lead to the best results. 
 
 We will be looking at the accuracy to see how accurate the model performs on the training dataset and the testing dataset. Another measurement to keep in mind was the recall score. 
@@ -102,13 +102,13 @@ We will be looking at the accuracy to see how accurate the model performs on the
 |Tuned Random Forest | - | **2416**| - | **2537** | **71** | 
 
 ## Conclusion
-The decision tree classifier performs well on the training dataset but not on the testing dataset. To resolve that, a random forest is used instead to prevent the model from overfitting the dataset when fitted. However, given a large number of combinations of parameters, GridSearch was used to find the best-performing combination for the Random Forest Model. Although the model only had an accuracy of roughly 80%, that will be good enough to allow medical centers to order a reasonable amount of vaccines when the model predicts a respondent's willingness to take the vaccine. With a good enough recall score and extra vaccines, we can minimize the number of vaccines wasted. With 5% extra vaccines supplied, there was only a waste of under 100 vaccines compared to expecting everyone to be taking the vaccines. 
+The decision tree classifier performs well on the training dataset but not on the testing dataset. To resolve that, a random forest is used instead to prevent the model from overfitting the dataset when fitted. However, given a large number of combinations of parameters, GridSearch was used to find the best-performing combination for the Random Forest Model. Although the model only had an accuracy of roughly 80%, that will be good enough to allow medical centers to order a reasonable amount of vaccines when the model predicts a respondent's willingness to take the vaccine. With a good enough recall score and extra vaccines, we can minimize the number of vaccines wasted. With **5% extra vaccines supplied**, there was only a waste of under 100 vaccines compared to expecting everyone to be taking the vaccines. 
 
 ## Limitations
 Unfortunately, there is a large combination of parameters that the classifier can use to make the best model and it is too computationally complex to look through and compare which has the best performance. That is why only a list of parameters was given to save time and narrow down the best combination. There could be an instance where a specific model performs better with the training set but not the testing set or vice versa. If given time, there could be the best-performing model for a given state but would be unrealistic to obtain a prediction. 
-1. Majority of the questions are targeted toward the H1N1 vaccines which don't reflect too well if they were to take the seasonal vaccine. 
+1. **Majority of the questions are targeted toward the H1N1 vaccines which don't reflect too well if they were to take the seasonal vaccine.** <br>
 The question could become irrelavent if the vaccines aren't needed or in the public mind such as the polio vaccine, which for the most part is elimated. 
-2. New generations and events may affect people's willingness to take the vaccines. 
+2. **New generations and events may affect people's willingness to take the vaccines.** <br>
 Covid-19 has had an impact on people's perception of vaccines, either good or bad. Along with other factors such as religion, people's opinions will change which can make the model ineffective if not updated for the new population. 
 
 ## Recommendations
@@ -120,9 +120,11 @@ The survey was made asking primarily about the H1N1 virus and could be changed t
 Not all medical centers will have the same results and should be treated regionally to maximize the accuracy of the model. For example, I added an extra 5% more vaccines but could be different from city to city. 
 
 ## Repository Structure
+```
 ├── README.md                           <- The top-level README for reviewers of this project
 ├── house_notebook.ipynb                <- Narrative documentation of analysis in Jupyter notebook
 ├── presentation_3.pdf                  <- PDF version of project presentation
 ├── pictures                            <- Graphs and plots created by code
 ├── modeling_code.ipynb                 <- GridSearch that was excluded out the code
 └── Data                                <- Original dataset from Website
+```
