@@ -9,6 +9,12 @@ Many hospitals do not keep track of the number of vaccines they waste. History s
 
 With the growing doubts about vaccine effectiveness, patients have been questioning whether to take the Covid-19 vaccine. We used the National 2009 H1N1 Flu Survey provided by [United States National Center for Health Statistics](https://www.cdc.gov/nchs/index.htm) for our dataset. We will be modeling to see if we can predict whether an individual has taken the Seasonal Vaccine based on several different features from their responses in the survey. Using the model, a medical center can have a rough idea of the number of vaccines needed. 
 
+Three models were created using decision trees and random forest algorithms. <br>
+**The Decision tree** was used as a baseline model in order to find improvements. Little to no changes were made to the parameters. <br>
+**The Random Forest** was the solution to the decision tree's initial problems. The model was an improvement to the baseline but could be better if tuned for the best accuracy. <br>
+Lastly, the **Tuned Random Forest** to find the best combinations of parameters for the model. Multiple combination were look through using **Gridsearch.**  <br> 
+The model progressively improves the training and testing accuracy in order to predict the patient's vaccine status. 
+
 ## Business Understanding 
 Vaccines are a useful way to prevent viral infections. One of the most common viral infections is influenza or most commonly known as the flu. The CDC recommends individuals receive the vaccine during the flu season every year. However, since vaccines aren't mandatory, individuals can deny them through personal beliefs or limited knowledge of the vaccine. When vaccines go unused, they are wasted in the center rather than distributed to centers needed. <br> 
 
@@ -93,4 +99,30 @@ We will be looking at the accuracy to see how accurate the model performs on the
 |:----:|:------:|:-------------:|:------------:|:----:|:---:|
 |Decision Tree| 5342 | 2455| 2466 | 2578 | 112 | 
 |Random Forest| - | 2441| - | 2563 | 97 | 
-|Tuned Random Forest | - | **2406**| - | **2526** | **60** | 
+|Tuned Random Forest | - | **2416**| - | **2537** | **71** | 
+
+## Conclusion
+The decision tree classifier performs well on the training dataset but not on the testing dataset. To resolve that, a random forest is used instead to prevent the model from overfitting the dataset when fitted. However, given a large number of combinations of parameters, GridSearch was used to find the best-performing combination for the Random Forest Model. Although the model only had an accuracy of roughly 80%, that will be good enough to allow medical centers to order a reasonable amount of vaccines when the model predicts a respondent's willingness to take the vaccine. With a good enough recall score and extra vaccines, we can minimize the number of vaccines wasted. With 5% extra vaccines supplied, there was only a waste of under 100 vaccines compared to expecting everyone to be taking the vaccines. 
+
+## Limitations
+Unfortunately, there is a large combination of parameters that the classifier can use to make the best model and it is too computationally complex to look through and compare which has the best performance. That is why only a list of parameters was given to save time and narrow down the best combination. There could be an instance where a specific model performs better with the training set but not the testing set or vice versa. If given time, there could be the best-performing model for a given state but would be unrealistic to obtain a prediction. 
+1. Majority of the questions are targeted toward the H1N1 vaccines which don't reflect too well if they were to take the seasonal vaccine. 
+The question could become irrelavent if the vaccines aren't needed or in the public mind such as the polio vaccine, which for the most part is elimated. 
+2. New generations and events may affect people's willingness to take the vaccines. 
+Covid-19 has had an impact on people's perception of vaccines, either good or bad. Along with other factors such as religion, people's opinions will change which can make the model ineffective if not updated for the new population. 
+
+## Recommendations
+1. Given time, I would recommend exploring **different classification models** and **different combinations** of parameters to improve the model. <br>
+Ideally, an 80% would be preferred but not as needed since a medical center should have a range of vaccines supply to take into account situations such as new patients. 
+2. **Modified or targeted questions** should be added to the survey. <br>
+The survey was made asking primarily about the H1N1 virus and could be changed to adapt to the current state of the world such as covid-19.
+3. Determine an **adequate amount** of spare vaccines to allocate from one center to another. <br>
+Not all medical centers will have the same results and should be treated regionally to maximize the accuracy of the model. For example, I added an extra 5% more vaccines but could be different from city to city. 
+
+## Repository Structure
+├── README.md                           <- The top-level README for reviewers of this project
+├── house_notebook.ipynb                <- Narrative documentation of analysis in Jupyter notebook
+├── presentation_3.pdf                  <- PDF version of project presentation
+├── pictures                            <- Graphs and plots created by code
+├── modeling_code.ipynb                 <- GridSearch that was excluded out the code
+└── Data                                <- Original dataset from Website
