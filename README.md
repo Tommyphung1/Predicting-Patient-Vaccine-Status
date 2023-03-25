@@ -95,6 +95,13 @@ By using GridSearch, a dictionary of a list of parameters is scoped to see which
 We will be looking at the accuracy to see how accurate the model performs on the training dataset and the testing dataset. Another measurement to keep in mind was the recall score. 
 
 ## Results 
+| Model | Training Accuracy | Testing Accuracy | Recall Score  |                                                                                     
+|:------|:-------------:|:------------:|:--:|
+| Decison Tree | 100% | 68.21% | 65.33% |
+| Random Forest| 83.45%| 77.89% | 75.55% |
+| Random Forest with Tuning| 92.59% | 78.36%|75.55%|
+
+## Example
 | Classifier | Number of Patients |Prediction| True Prediction | Supply of Vaccine | Wasted Vaccines |                                                                                     
 |:----:|:------:|:-------------:|:------------:|:----:|:---:|
 |Decision Tree| 5342 | 2455| 2466 | 2578 | 112 | 
