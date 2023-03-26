@@ -123,7 +123,7 @@ The best parameters from the list, was found with GridSearch with the scoring to
 |Tuned Random Forest | - | **2416**| - | **2537** | **71** | 
 
 ## Conclusion
-The decision tree classifier performs well on the training dataset but not on the testing dataset. To resolve that, a random forest is used instead to prevent the model from overfitting the dataset when fitted. However, given a large number of combinations of parameters, GridSearch was used to find the best-performing combination for the Random Forest Model. Although the model only had an accuracy of roughly 80%, that will be good enough to allow medical centers to order a reasonable amount of vaccines when the model predicts a respondent's willingness to take the vaccine. With a good enough recall score and extra vaccines, we can minimize the number of vaccines wasted. With **5% extra vaccines supplied**, there was only a waste of under 100 vaccines compared to expecting everyone to be taking the vaccines. 
+The decision tree classifier performs well on the training dataset but not on the testing dataset. To resolve that, a random forest is used instead to prevent the model from overfitting the dataset when fitted. However, given a large number of combinations of parameters, **GridSearch was used to find the best-performing combination for the Random Forest Model**. Although the model only had an accuracy of roughly **80%**, that will be good enough to allow medical centers to order a reasonable amount of vaccines when the model predicts a respondent's willingness to take the vaccine. With a good enough recall score and extra vaccines, we can minimize the number of vaccines wasted. With **5% extra vaccines supplied**, there was only a waste of under 100 vaccines compared to expecting everyone to be taking the vaccines. 
 
 ## Limitations
 Unfortunately, there is a large combination of parameters that the classifier can use to make the best model and it is too computationally complex to look through and compare which has the best performance. That is why only a list of parameters was given to save time and narrow down the best combination. There could be an instance where a specific model performs better with the training set but not the testing set or vice versa. If given time, there could be the best-performing model for a given state but would be unrealistic to obtain a prediction. 
@@ -134,11 +134,11 @@ Covid-19 has had an impact on people's perception of vaccines, either good or ba
 
 ## Recommendations
 1. Given time, I would recommend exploring **different classification models** and **different combinations** of parameters to improve the model. <br>
-Ideally, an 80% would be preferred but not as needed since a medical center should have a range of vaccines supply to take into account situations such as new patients. 
+Ideally, an 80% would be preferred but not as needed since a medical center should have a range of vaccines supply to take into account situations such as new patients. <br>
 2. **Modified or targeted questions** should be added to the survey. <br>
-The survey was made asking primarily about the H1N1 virus and could be changed to adapt to the current state of the world such as covid-19.
+The survey was made asking primarily about the H1N1 virus and could be changed to adapt to the current state of the world such as covid-19. <br>
 3. Determine an **adequate amount** of spare vaccines to allocate from one center to another. <br>
-Not all medical centers will have the same results and should be treated regionally to maximize the accuracy of the model. For example, I added an extra 5% more vaccines but could be different from city to city. 
+Not all medical centers will have the same results and should be treated regionally to maximize the accuracy of the model. For example, I added an extra 5% more vaccines but could be different from city to city. <br>
 
 ## Repository Structure
 ```
