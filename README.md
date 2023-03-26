@@ -101,6 +101,20 @@ We will be looking at the accuracy to see how accurate the model performs on the
 | Random Forest| 83.45%| 77.89% | 75.55% |
 | Random Forest with Tuning| 92.59% | 78.36%|75.55%|
 
+## Evaluation
+### Decision Tree
+The Decision Tree model had a **100%** accuracy when predicting with the training dataset with a **68.21%** accuracy score with the testing dataset. When the accuracies have a large difference, this is a sign of overfitting. This is because decision trees perform a greedy algorithm and will always result in the same model.  
+
+**Solution:** Reduce the max depth or use a model that isn't prone to overfitting. In this case, a **Random Forest** was used for the next model. 
+
+### Random Forest
+The Random Forest was set with a max depth and no restriction to the max amount of features similar to parameters as the decision tree. Random Forest builds upon decision trees made up of an ensemble of trees voting on the results. The Random Forest model had an **83.45%** accuracy on the training dataset and an **77.89%** accuracy score on the testing dataset. Although the training accuracy decreased from the decision tree, the testing accuracy increased instead. This model was not overfitted but the parameters were given to mirror the decision tree default parameters. 
+
+**Solution:** To improve the model, **GridSearch** was used to search through the different hyperparameters to find the best-performing parameters. A directory of parameters was searched to find the best combination of parameters for the random forest model to obtain the best accuracy. 
+
+### Tuned Random Forest
+The best parameters from the list, was found with GridSearch with the scoring to the best accuacy. This model has an training accuracy score of **92.59%** and a testing accuracy score of **78.36%**. There was an improvement with the testing accuracy which means that the parameters used was better than the parameters given before. Recall score stayed the say meaning that the model is correctly predicting the number of patient taking the vaccines. 
+
 ## Example
 | Classifier | Number of Patients |Prediction| True Prediction | Supply of Vaccine | Wasted Vaccines |                                                                                     
 |:----:|:------:|:-------------:|:------------:|:----:|:---:|
