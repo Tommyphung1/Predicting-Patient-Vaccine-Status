@@ -149,6 +149,7 @@ Not all medical centers will have the same results and should be treated regiona
 ```
 ├── README.md                           <- The top-level README for reviewers of this project
 ├── house_notebook.ipynb                <- Narrative documentation of analysis in Jupyter notebook
+├── Addition_Exploration.ipynb          <- Exploration for the dataset and graphing
 ├── presentation_3.pdf                  <- PDF version of project presentation
 ├── pictures                            <- Graphs and plots created by code
 ├── modeling_code.ipynb                 <- GridSearch that was excluded out the code
