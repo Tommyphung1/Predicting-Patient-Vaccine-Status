@@ -24,6 +24,7 @@ Vaccines are a useful way to prevent viral infections. One of the most common vi
 
 To give patients the vaccines as efficiently as possible, hospitals and medical centers store vaccines. With the dataset, we could predict whether a patient would want a vaccine based on their answers to the survey. Medical centers can then order an adequate amount of vaccines with little waste. 
 
+![Distribution](pictures/Flatiron_General_Distributation.JPG)
 ## Data Understanding
 The dataset consists of binary and numerical entries based on their answers to a survey. To model the dataset, all of the data types need to be numeric so dummy variables are needed for 12 of the columns. After the dummy variables were made, there are over 100 different columns created and will be used in the modeling. We looked at **accuracy** and **recall** scores to see how well the model performs and if a higher recall score can lead to a better resulting model. The accuracy score is used to gauge how well the model performs. The recall score will be used to give certainty that the patient who needs the vaccines will receive one. 
 
@@ -115,6 +116,10 @@ The Random Forest was set with a max depth and no restriction to the max amount 
 ### Tuned Random Forest
 The best parameters from the list, was found with GridSearch with the scoring to the best accuacy. This model has an training accuracy score of **92.59%** and a testing accuracy score of **78.36%**. There was an improvement with the testing accuracy which means that the parameters used was better than the parameters given before. Recall score stayed the say meaning that the model is correctly predicting the number of patient taking the vaccines. 
 
+### Top Feature Analysis
+The most important features that influence the likihood of taking the seasonal vaccine was their opinion on the vaccine itself. If the patient see a risk in the seasonal flu and know the effectiveness, they were more likely to take it. Age and the doctors recommendation was the other deciding factors until the next one being the risk of H1N1.  
+
+![Most Important Features](pictures/Most Important Features.JPG)
 ## Example
 | Classifier | Number of Patients |Prediction| True Prediction | Supply of Vaccine | Wasted Vaccines |                                                                                     
 |:----:|:------:|:-------------:|:------------:|:----:|:---:|
