@@ -119,7 +119,7 @@ The best parameters from the list, was found with GridSearch with the scoring to
 ### Top Feature Analysis
 The most important features that influence the likihood of taking the seasonal vaccine was their opinion on the vaccine itself. If the patient see a risk in the seasonal flu and know the effectiveness, they were more likely to take it. Age and the doctors recommendation was the other deciding factors until the next one being the risk of H1N1.  
 
-![Most Important Features](pictures/Most Important Features.JPG)
+![Most Important Features](https://github.com/Tommyphung1/phase_3_project/blob/8301c297400abacc7127a26925fca128968110e9/pictures/Most%20Important%20Features.JPG)
 ## Example
 | Classifier | Number of Patients |Prediction| True Prediction | Supply of Vaccine | Wasted Vaccines |                                                                                     
 |:----:|:------:|:-------------:|:------------:|:----:|:---:|
