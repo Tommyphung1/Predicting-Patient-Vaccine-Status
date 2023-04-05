@@ -116,8 +116,15 @@ The Random Forest was set with a max depth and no restriction to the max amount 
 ### Tuned Random Forest
 The best parameters from the list, was found with GridSearch with the scoring to the best accuacy. This model has an training accuracy score of **92.59%** and a testing accuracy score of **78.36%**. There was an improvement with the testing accuracy which means that the parameters used was better than the parameters given before. Recall score stayed the say meaning that the model is correctly predicting the number of patient taking the vaccines. 
 
+### Classification Report
+[Classification Report](http://localhost:8888/lab/tree/pictures/Classification%20Report.JPG)
+
 ### Top Feature Analysis
-The most important features that influence the likihood of taking the seasonal vaccine was their opinion on the vaccine itself. If the patient see a risk in the seasonal flu and know the effectiveness, they were more likely to take it. Age and the doctors recommendation was the other deciding factors until the next one being the risk of H1N1.  
+The most important features that influence the likihood of taking the seasonal vaccine was their opinion on the vaccine itself. If the patient see a risk in the seasonal flu and know the effectiveness, they were more likely to take it. Age and the doctors recommendation was the other deciding factors until the next one being the risk of H1N1. 
+
+Medical centers can correlate **higher opinions** about a vaccine to taking the vaccine and if their **doctors recommend** the vaccine, making it more likely to take the vaccine as well. It appears that the other features had little influence such as **occupation** which was consistently in the lower importance with the list of features considered. There may be some small insight that the next couple of important features were age and risk in the H1N1. Age may be hard to infer with age affecting many aspects of health and their opinion of other vaccines may affect their willingness too. <br> 
+
+In other words, **if a patient is willing to take one vaccine, they would take others**. 
 
 ![Most Important Features](https://github.com/Tommyphung1/phase_3_project/blob/8301c297400abacc7127a26925fca128968110e9/pictures/Most%20Important%20Features.JPG)
 ## Example
@@ -138,12 +145,17 @@ The question could become irrelavent if the vaccines aren't needed or in the pub
 Covid-19 has had an impact on people's perception of vaccines, either good or bad. Along with other factors such as religion, people's opinions will change which can make the model ineffective if not updated for the new population. 
 
 ## Recommendations
+In order to improve the performance of the survey being conducted, **small changes in the questions** could be made to give a better idea of whether a patient would take the vaccine or not. Improvement of the model will lead to a better estimation of the number of vaccines to reduce the number of wasted vaccines. 
+
 1. Given time, I would recommend exploring **different classification models** and **different combinations** of parameters to improve the model. <br>
 Ideally, an 80% would be preferred but not as needed since a medical center should have a range of vaccines supply to take into account situations such as new patients. <br>
 2. **Modified or targeted questions** should be added to the survey. <br>
 The survey was made asking primarily about the H1N1 virus and could be changed to adapt to the current state of the world such as covid-19. <br>
 3. Determine an **adequate amount** of spare vaccines to allocate from one center to another. <br>
 Not all medical centers will have the same results and should be treated regionally to maximize the accuracy of the model. For example, I added an extra 5% more vaccines but could be different from city to city. <br>
+
+The model is meant for providing medical centers insight into the number of vaccines needed, not to influence the patient in taking them. <br>
+If a **center wants more patients to take the vaccine**, the medical center can have **doctors to suggest taking the vaccines** based on the top important features. 
 
 ## Repository Structure
 ```
