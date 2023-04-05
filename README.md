@@ -117,7 +117,7 @@ The Random Forest was set with a max depth and no restriction to the max amount 
 The best parameters from the list, was found with GridSearch with the scoring to the best accuacy. This model has an training accuracy score of **92.59%** and a testing accuracy score of **78.36%**. There was an improvement with the testing accuracy which means that the parameters used was better than the parameters given before. Recall score stayed the say meaning that the model is correctly predicting the number of patient taking the vaccines. 
 
 ### Classification Report
-[Classification Report](http://localhost:8888/lab/tree/pictures/Classification%20Report.JPG)
+![Classification Report](https://github.com/Tommyphung1/phase_3_project/blob/b3e85d65f4835a35706a1211d330f39b6e8b2082/pictures/Classification%20Report.JPG)
 
 ### Top Feature Analysis
 The most important features that influence the likihood of taking the seasonal vaccine was their opinion on the vaccine itself. If the patient see a risk in the seasonal flu and know the effectiveness, they were more likely to take it. Age and the doctors recommendation was the other deciding factors until the next one being the risk of H1N1. 
