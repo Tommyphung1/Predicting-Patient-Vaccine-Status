@@ -1,11 +1,11 @@
-# Phase 3 Project
+# Predicting Patient Vaccine Status using Random Forest
 **Client:** Providence (Most medical centers) <br>
 **Authors:** Tommy Phung 
 
 ## Overview
 According to the [CDC](https://www.cdc.gov/flu/prevent/vaxsupply.htm#:~:text=Flu%20vaccine%20is%20produced%20by,for%20the%202022%2D2023%20season.), there is a projected supply of over 170 million influenza vaccines throughout the United States. 
 
-Many hospitals do not keep track of the number of vaccines they waste. History shows that vaccines are unused as well. An estimated 71 million H1N1 flu vaccines were unused, and an estimated 1.1 billion Covid Vaccines went to waste due to expired vaccines and supply chain issues.** <br>
+Many hospitals do not keep track of the number of vaccines they waste. History shows that vaccines are unused as well. An estimated 71 million H1N1 flu vaccines were unused, and an estimated 1.1 billion COVID-19 vaccines went to waste due to expired vaccines and supply chain issues.** <br>
 
 With the growing doubts about vaccine effectiveness, patients have been questioning whether to take the Covid-19 vaccine. We used the National 2009 H1N1 Flu Survey provided by [United States National Center for Health Statistics](https://www.cdc.gov/nchs/index.htm) for our dataset. We will be modeling to see if we can predict whether an individual has taken the Seasonal Vaccine based on several different features from their responses in the survey. Using the model, a medical center can have a rough idea of the number of vaccines needed. 
 
@@ -18,9 +18,9 @@ The model progressively improves the training and testing accuracy in order to p
 ## Business Understanding 
 Vaccines are a useful way to prevent viral infections. One of the most common viral infections is influenza or most commonly known as the flu. The CDC recommends individuals receive the vaccine during the flu season every year. However, since vaccines aren't mandatory, individuals can deny them through personal beliefs or limited knowledge of the vaccine. When vaccines go unused, they are wasted in the center rather than distributed to centers needed. <br> 
 
-**The vaccines could have been distributed to areas with inadequate number of vaccines.**
+**The vaccines could have been distributed to areas with an inadequate number of vaccines.**
 
-**For example, 1.1 billion Covid Vaccines were estimated to be wasted due to expired vaccines and supply chain issues.** <br>
+**For example, 1.1 billion COVID-19 vaccines were estimated to be wasted due to expired vaccines and supply chain issues.** <br>
 
 To give patients the vaccines as efficiently as possible, hospitals and medical centers store vaccines. With the dataset, we could predict whether a patient would want a vaccine based on their answers to the survey. Medical centers can then order an adequate amount of vaccines with little waste. 
 
@@ -109,18 +109,18 @@ The Decision Tree model had a **100%** accuracy when predicting with the trainin
 **Solution:** Reduce the max depth or use a model that isn't prone to overfitting. In this case, a **Random Forest** was used for the next model. 
 
 ### Random Forest
-The Random Forest was set with a max depth and no restriction to the max amount of features similar to parameters as the decision tree. Random Forest builds upon decision trees made up of an ensemble of trees voting on the results. The Random Forest model had an **83.45%** accuracy on the training dataset and an **77.89%** accuracy score on the testing dataset. Although the training accuracy decreased from the decision tree, the testing accuracy increased instead. This model was not overfitted but the parameters were given to mirror the decision tree default parameters. 
+The Random Forest was set with a max depth and no restriction to the maximum amount of features similar to parameters as the decision tree. Random Forest builds upon decision trees made up of an ensemble of trees voting on the results. The Random Forest model had an **83.45%** accuracy on the training dataset and a **77.89%** accuracy score on the testing dataset. Although the training accuracy decreased from the decision tree, the testing accuracy increased instead. This model was not overfitted but the parameters were given to mirror the decision tree default parameters. 
 
 **Solution:** To improve the model, **GridSearch** was used to search through the different hyperparameters to find the best-performing parameters. A directory of parameters was searched to find the best combination of parameters for the random forest model to obtain the best accuracy. 
 
 ### Tuned Random Forest
-The best parameters from the list, was found with GridSearch with the scoring to the best accuacy. This model has an training accuracy score of **92.59%** and a testing accuracy score of **78.36%**. There was an improvement with the testing accuracy which means that the parameters used was better than the parameters given before. Recall score stayed the say meaning that the model is correctly predicting the number of patient taking the vaccines. 
+The best parameters from the list were found with GridSearch with the scoring to the best accuracy. This model has a training accuracy score of **92.59%** and a testing accuracy score of **78.36%**. There was an improvement in the testing accuracy which means that the parameters used were better than the parameters given before. The recall score stayed the same meaning that the model is correctly predicted the number of patients taking the vaccines. 
 
 ### Classification Report
 ![Classification Report](https://github.com/Tommyphung1/phase_3_project/blob/b3e85d65f4835a35706a1211d330f39b6e8b2082/pictures/Classification%20Report.JPG)
 
 ### Top Feature Analysis
-The most important features that influence the likihood of taking the seasonal vaccine was their opinion on the vaccine itself. If the patient see a risk in the seasonal flu and know the effectiveness, they were more likely to take it. Age and the doctors recommendation was the other deciding factors until the next one being the risk of H1N1. 
+The most important feature that influenced the likelihood of taking the seasonal vaccine was their opinion on the vaccine itself. If the patient sees a risk in the seasonal flu and knows its effectiveness, they are more likely to take it. Age and the doctors' recommendation were the other deciding factors the next one being the risk of H1N1. 
 
 Medical centers can correlate **higher opinions** about a vaccine to taking the vaccine and if their **doctors recommend** the vaccine, making it more likely to take the vaccine as well. It appears that the other features had little influence such as **occupation** which was consistently in the lower importance with the list of features considered. There may be some small insight that the next couple of important features were age and risk in the H1N1. Age may be hard to infer with age affecting many aspects of health and their opinion of other vaccines may affect their willingness too. <br> 
 
@@ -140,7 +140,7 @@ The decision tree classifier performs well on the training dataset but not on th
 ## Limitations
 Unfortunately, there is a large combination of parameters that the classifier can use to make the best model and it is too computationally complex to look through and compare which has the best performance. That is why only a list of parameters was given to save time and narrow down the best combination. There could be an instance where a specific model performs better with the training set but not the testing set or vice versa. If given time, there could be the best-performing model for a given state but would be unrealistic to obtain a prediction. 
 1. **Majority of the questions are targeted toward the H1N1 vaccines which don't reflect too well if they were to take the seasonal vaccine.** <br>
-The question could become irrelavent if the vaccines aren't needed or in the public mind such as the polio vaccine, which for the most part is elimated. 
+The question could become irrelevant if the vaccines aren't needed or in the public mind such as the polio vaccine, which for the most part is eliminated. 
 2. **New generations and events may affect people's willingness to take the vaccines.** <br>
 Covid-19 has had an impact on people's perception of vaccines, either good or bad. Along with other factors such as religion, people's opinions will change which can make the model ineffective if not updated for the new population. 
 
@@ -148,13 +148,13 @@ Covid-19 has had an impact on people's perception of vaccines, either good or ba
 In order to improve the performance of the survey being conducted, **small changes in the questions** could be made to give a better idea of whether a patient would take the vaccine or not. Improvement of the model will lead to a better estimation of the number of vaccines to reduce the number of wasted vaccines. 
 
 1. Given time, I would recommend exploring **different classification models** and **different combinations** of parameters to improve the model. <br>
-Ideally, an 80% would be preferred but not as needed since a medical center should have a range of vaccines supply to take into account situations such as new patients. <br>
+Ideally, an 80% would be preferred but not as needed since a medical center should have a range of vaccine supplies to take into account situations such as new patients. <br>
 2. **Modified or targeted questions** should be added to the survey. <br>
 The survey was made asking primarily about the H1N1 virus and could be changed to adapt to the current state of the world such as covid-19. <br>
 3. Determine an **adequate amount** of spare vaccines to allocate from one center to another. <br>
-Not all medical centers will have the same results and should be treated regionally to maximize the accuracy of the model. For example, I added an extra 5% more vaccines but could be different from city to city. <br>
+Not all medical centers will have the same results and should be treated regionally to maximize the accuracy of the model. For example, I added an extra 5% more vaccines but this could be different from city to city. <br>
 
-The model is meant for providing medical centers insight into the number of vaccines needed, not to influence the patient in taking them. <br>
+The model is meant to provide medical centers insight into the number of vaccines needed, not to influence the patient in taking them. <br>
 If a **center wants more patients to take the vaccine**, the medical center can have **doctors to suggest taking the vaccines** based on the top important features. 
 
 ## Repository Structure
